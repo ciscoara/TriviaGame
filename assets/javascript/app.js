@@ -6,11 +6,11 @@
 //have fun
 
 var panel = $("#play");
-$(document).on("click", "#start", function(){
+$(document).on("click", "#start", function(event){
     game.start();
 });
 
-$(document).on("click", "#done", function(){
+$(document).on("click", "#done", function(event){
     game.done();
 });
 
@@ -76,4 +76,18 @@ countdown: function(){
         alert("OUT OF TIME!");
         game.done();
     }
-}
+},
+start: function() {
+    timer = setInterval(game.countdown, 1000);
+    $('#subcontainer').prepend('<h2>Time Remaining: <span id="counter-number">60</span> Seconds</h2>');
+    $("#start").remove();
+
+    for (var i = 0; i < questions.length; i++) {
+    panel.append('<h2>' + questions[i].question + '</h2>');
+    for (var j = 0; j < questions[i].choices.length; j++){
+      panel.append('<input type="radio" name ="question' + '-' + i + '"value="' + questions[i].choices[j] + '">' + questions[i].choices[j]);
+      }
+        }
+        panel.append("<button id='done'>DONE</button>");
+    })
+    
