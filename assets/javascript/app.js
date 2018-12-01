@@ -68,7 +68,7 @@ var questions = [
 var game = {
     correct: 0,
     incorrect: 0,
-    counter: 20,
+    counter: 40,
 
 countdown: function(){
     game.counter--;
@@ -80,13 +80,13 @@ countdown: function(){
 },
 start: function() {
     timer = setInterval(game.countdown, 1000);
-    $('#timeLeft').prepend('<h2>Timer: <span id="counter-number">20</span></h2>');
+    $('#timeLeft').prepend('<h2>Timer: <span id="counter-number">40</span></h2>');
     $("#start").remove();
 
     for (var i = 0; i < questions.length; i++) {
     panel.append('<h2>' + questions[i].question + '</h2>');
     for (var j = 0; j < questions[i].choices.length; j++){
-      panel.append('<input type="radio" size="20px" name ="question' + '-' + i + '"value="'  + questions[i].choices[j] + '">' + '<label id="font">' +questions[i].choices[j]+'</label>');
+      panel.append('<input type="radio" name ="question' + '-' + i + '"value="'  + questions[i].choices[j] + '">' + '<label id="font">' +questions[i].choices[j]+'</label>');
 
       }
         }

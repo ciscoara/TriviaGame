@@ -27,13 +27,13 @@ h1 {
 }
 h2 {
     font-size: 80px;
-    color: #123E7A;
+    color: #1E1E3D ;
 
 }
 
 h3 {
     font-size: 50px;
-    color: rgb(97, 40, 40);
+    color: whitesmoke;
 }
 
 #font{
@@ -47,7 +47,8 @@ h3 {
     width: 250px;
 }
 #counter-number{
-    color: rgb(207, 72, 72);
+    color: rgb(153, 44, 44);
+    font-family: Cambria, Cochin, Georgia, Times;
 
 }
 
