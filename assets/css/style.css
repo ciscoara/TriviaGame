@@ -17,28 +17,38 @@
 }
 
 h1 {
-    color: #2A2A57;
+    
     border: 10px;
     font-size: 200px;
     text-align: center;
+    background: -webkit-linear-gradient(#1E1E3D,#0C7A06);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 h2 {
-    font-size: 60px;
-    color: whitesmoke;
+    font-size: 80px;
+    color: #123E7A;
 
 }
 
 h3 {
     font-size: 50px;
-    color: whitesmoke;
+    color: rgb(97, 40, 40);
 }
-label{
-   padding: 20px;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   color: beige;
+
+#font{
+    font-size: 30px;
+    color: rgb(207, 72, 72);
+    padding: 10px;
+}
+
+#timeLeft{
+    float: left;
+    width: 250px;
 }
 #counter-number{
     color: rgb(207, 72, 72);
+
 }
 
 #start {
@@ -48,18 +58,20 @@ label{
 
 }
 input[type="radio"] {
-    width: 20px;
-    height: 20px;
-    font-size: 100px;
+    width: 15px;
+    height: 15px;
+    font-size: 30px;
     
 }
-#answers{
-    font-size: 100px;
-}
+
 #done {    
     width: 150px;
     height: 80px;
     font-size: 50px;
+}
+#div-play{
+    position: fixed;
+    
 }
 
 /* @media (max-width: 767.98px) {

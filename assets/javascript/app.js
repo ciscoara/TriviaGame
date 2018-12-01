@@ -16,47 +16,47 @@ $(document).on("click", "#done", function(event){
 
 var questions = [
     {
-        question: "True of False, A Pterosaur is a dinosaur.",
+        question: "1. True of False, A Pterosaur is a dinosaur.",
         choices: ["True", "False"],
         right: "False"
         },
         {
-        question: "_______ means good mother lizard",
+        question: "2. _______ means good mother lizard",
         choices: ["Mososaurus", "Maiasaura", "Megolosaurus", "Microraptor"],
         right: "Maiasaura"
         },
         {
-            question: "Brachiosaurus was a ...",
+            question: "3. Brachiosaurus was a ...",
             choices: ["Carnivore", "Herbivore", "Omnivore"],
             right: "Herbivore"
             },
             {
-                question: "This dinosaur had a large sail on its back",
+                question: "4. This dinosaur had a large sail on its back",
                 choices: ["Spinosaurus", "Stegosaurus", "Dimetredon", "Styracosaurus"],
                 right: "Spinosaurus"
                 },
                 {
-                    question: "Biggest known flying Pterosaur...",
+                    question: "5. Biggest known flying Pterosaur...",
                     choices: ["Pteranodon", "Ptradactyl", "Dimorphodon", "Quetzocoatlus"],
                     right: "Quetzocoatlus"
                     },
                     {
-                        question: "Which of these is not a marine reptile?",
+                        question: "6. Which of these is not a marine reptile?",
                         choices: ["Plesiosaurus", "Icthyosaurus", "Mososaurus", "Iguanadon"],
                         right: "Iguanadon"
                         },
                         {
-                            question: "What is the largest raptor found?",
+                            question: "7. What is the largest raptor found?",
                             choices: ["Velociraptor", "Oviraptor", "Utahraptor", "Microraptor"],
                             right: "Utahraptor"
                             },
                             {
-                                question: "Which is not a carnivore?",
+                                question: "8. Which is not a carnivore?",
                                 choices: ["Allosaurus", "Carnotaurus", "Giganotosaurus", "Diplodocus"],
                                 right: "Diploducus"
                                 },
                                 {
-                                    question: "True or False, Tyrranosaurus Rex means Tyrant Lizard and King",
+                                    question: "9. True or False, Tyrranosaurus Rex means Tyrant Lizard and King",
                                     choices: ["True", "False"],
                                     right: "True"
                                     }];
@@ -68,7 +68,7 @@ var questions = [
 var game = {
     correct: 0,
     incorrect: 0,
-    counter: 20,
+    counter: 100,
 
 countdown: function(){
     game.counter--;
@@ -80,13 +80,13 @@ countdown: function(){
 },
 start: function() {
     timer = setInterval(game.countdown, 1000);
-    $('#subcontainer').prepend('<h2>Time Left: <span id="counter-number">20</span> Seconds</h2>');
+    $('#timeLeft').prepend('<h2>Timer: <span id="counter-number">20</span></h2>');
     $("#start").remove();
 
     for (var i = 0; i < questions.length; i++) {
     panel.append('<h2>' + questions[i].question + '</h2>');
     for (var j = 0; j < questions[i].choices.length; j++){
-      panel.append('<input type="radio" id="answers" name ="question' + '-' + i + '"value="'  + questions[i].choices[j] + '">' + questions[i].choices[j]);
+      panel.append('<input type="radio" size="20px" name ="question' + '-' + i + '"value="'  + questions[i].choices[j] + '">' + '<label id="font">' +questions[i].choices[j]+'</label>');
 
       }
         }
@@ -186,16 +186,6 @@ start: function() {
             }
 
         });
-        // $.each($("input[name='question-10']:checked"), function() {
-        //     if ($(this).val() == questions[10].correctAnswer) {
-        //         console.log(this);
-        //         game.correct++;
-        //     } else {
-        //         game.incorrect++;
-        //     }
-
-        // });
-
 
         this.results();
     },
