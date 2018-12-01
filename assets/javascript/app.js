@@ -68,7 +68,7 @@ var questions = [
 var game = {
     correct: 0,
     incorrect: 0,
-    counter: 100,
+    counter: 20,
 
 countdown: function(){
     game.counter--;
@@ -90,7 +90,7 @@ start: function() {
 
       }
         }
-        panel.append("<br><button id='done' class='btn btn-outline-dark btn-lg'>DONE</button>");
+        panel.append("<br><button id='done' class='btn btn-outline-light btn-lg'>DONE</button>");
 
     },
 
