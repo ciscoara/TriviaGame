@@ -26,25 +26,34 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 h2 {
-    font-size: 80px;
-    color: #1E1E3D ;
-
+    font-size: 60px;
+    background: -webkit-linear-gradient(#1E1E3D,#0C7A06);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h3 {
     font-size: 50px;
     color: whitesmoke;
 }
+h4{
+    font-size: 80px;
+    background: -webkit-linear-gradient(#1E1E3D,#0C7A06);
+    -webkit-background-clip: text;
+
+}
 
 #font{
-    font-size: 30px;
-    color: rgb(207, 72, 72);
+    font-size: 40px;
+    color: white;
     padding: 10px;
+
 }
 
 #timeLeft{
     float: left;
     width: 250px;
+    color: whitesmoke;
 }
 #counter-number{
     color: rgb(153, 44, 44);
@@ -72,6 +81,7 @@ input[type="radio"] {
 }
 #div-play{
     position: fixed;
+    margin-right: 100px;
     
 }
 

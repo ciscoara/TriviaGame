@@ -80,7 +80,7 @@ countdown: function(){
 },
 start: function() {
     timer = setInterval(game.countdown, 1000);
-    $('#timeLeft').prepend('<h2>Timer: <span id="counter-number">40</span></h2>');
+    $('#timeLeft').prepend('<h4>Timer: <span id="counter-number">40</span></h4>');
     $("#start").remove();
 
     for (var i = 0; i < questions.length; i++) {
@@ -194,8 +194,9 @@ start: function() {
       results:function() {
           clearInterval(timer);
 
-          $("#subcontainer h2").remove();
-       panel.html("<h2>Your Score:</h2>");
+          $("#subcontainer h4").remove();
+
+       panel.html("<h2>How you did:</h2>");
        panel.append("<h3>You got this many right: " + this.correct + "</h3>");
        panel.append("<h3>You got this many wrong: " + this.incorrect + "</h3>");
        panel.append("<h3>You didn't answer this many: " + (questions.length - (this.incorrect + this.correct)) + "</h3>");
