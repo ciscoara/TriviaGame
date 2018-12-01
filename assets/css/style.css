@@ -1,9 +1,67 @@
-*{
-    background-image: url("/assets/images/dinoback.jpg");
+*
+{
+    background: url("/assets/images/dinoback.jpg") no-repeat center center fixed;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "myFont";
+    
 
 }
-@media (max-width: 767.98px) {
-    background: 50%;
+
+@font-face {
+    font-family: "myFont";
+    src: url(/assets/fonts/Jurassic_Park.ttf);
+
 }
+
+h1 {
+    color: #2A2A57;
+    border: 10px;
+    font-size: 200px;
+    text-align: center;
+}
+h2 {
+    font-size: 60px;
+    color: whitesmoke;
+
+}
+
+h3 {
+    font-size: 50px;
+    color: whitesmoke;
+}
+label{
+    font-size: 50px;
+    color: aqua;
+}
+
+#start {
+    width: 150px;
+    height: 80px;
+    font-size: 50px;
+
+}
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    font-size: 100px;
+    
+}
+#answers{
+    font-size: 100px;
+}
+#done {    
+    width: 150px;
+    height: 80px;
+    font-size: 50px;
+}
+
+/* @media (max-width: 767.98px) {
+    background: 50%;
+} */
 /* @media (max-width: 991.98px) { ... };
 @media (max-width: 1199.98px) { ... } */
+
+/*panel.append('<input type="radio" name ="question' + '-' + i + '"value="'  + questions[i].choices[j] +  '">' + questions[i].choices[j]); */
