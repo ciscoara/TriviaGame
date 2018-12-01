@@ -5,15 +5,19 @@
 //have a timer going 
 //have fun
 
+//start game at start
 var panel = $("#play");
 $(document).on("click", "#start", function(event){
     game.start();
 });
 
+//done button after answering questions to see stats
 $(document).on("click", "#done", function(event){
     game.done();
 });
 
+// build the questions. set them up as an array with 10 objects
+// set correct answer for later comparison
 var questions = [
     {
         question: "1. True of False, A Pterosaur is a dinosaur.",
@@ -65,11 +69,13 @@ var questions = [
                                         // choices: ["Weigh between 30-45 metric tons", "85 feet long", "All of the above"],
                                         // right: "All of the above"
                                         // }];    
-var game = {
+
+//game stats, place holder for correct, incorrect, and variable for the timer
+    var game = {
     correct: 0,
     incorrect: 0,
     counter: 40,
-
+//countdown funtion that reduces the counter value by 1
 countdown: function(){
     game.counter--;
     $("#counter-number").html(game.counter);
@@ -78,11 +84,13 @@ countdown: function(){
         game.done();
     }
 },
+//the reduction speed will be 1 second
 start: function() {
     timer = setInterval(game.countdown, 1000);
     $('#timeLeft').prepend('<h4>Timer: <span id="counter-number">40</span></h4>');
     $("#start").remove();
 
+    //loop for the questions to be added with the multiple choices
     for (var i = 0; i < questions.length; i++) {
     panel.append('<h2>' + questions[i].question + '</h2>');
     for (var j = 0; j < questions[i].choices.length; j++){
@@ -90,10 +98,11 @@ start: function() {
 
       }
         }
+        //showing the done button in case player finishes quick and it doesnt have to wait to see the answers
         panel.append("<br><button id='done' class='btn btn-outline-light btn-lg'>DONE</button>");
 
     },
-
+    //done function that shows the correct and incorrect answers
     done: function() {
 
         $.each($("input[name='question-0']:checked"), function() {
@@ -190,7 +199,7 @@ start: function() {
         this.results();
     },
 
-
+//shows results after the done function. gives a total of the game
       results:function() {
           clearInterval(timer);
 
