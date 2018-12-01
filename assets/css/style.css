@@ -33,8 +33,12 @@ h3 {
     color: whitesmoke;
 }
 label{
-    font-size: 50px;
-    color: aqua;
+   padding: 20px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: beige;
+}
+#counter-number{
+    color: rgb(207, 72, 72);
 }
 
 #start {

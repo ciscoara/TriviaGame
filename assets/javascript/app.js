@@ -14,7 +14,8 @@ $(document).on("click", "#done", function(event){
     game.done();
 });
 
-var questions = [{
+var questions = [
+    {
         question: "True of False, A Pterosaur is a dinosaur.",
         choices: ["True", "False"],
         right: "False"
@@ -67,7 +68,7 @@ var questions = [{
 var game = {
     correct: 0,
     incorrect: 0,
-    counter: 60,
+    counter: 20,
 
 countdown: function(){
     game.counter--;
@@ -78,24 +79,25 @@ countdown: function(){
     }
 },
 start: function() {
-    timer = setInterval(game.countdown, 2000);
-    $('#subcontainer').prepend('<h2>Time Remaining: <span id="counter-number">60</span> Seconds</h2>');
+    timer = setInterval(game.countdown, 1000);
+    $('#subcontainer').prepend('<h2>Time Left: <span id="counter-number">20</span> Seconds</h2>');
     $("#start").remove();
 
     for (var i = 0; i < questions.length; i++) {
     panel.append('<h2>' + questions[i].question + '</h2>');
     for (var j = 0; j < questions[i].choices.length; j++){
-      panel.append('<label>'+'<input type="radio" id="answers" name ="question' + '-' + i + '"value="'  + questions[i].choices[j] + '">' +'</label>' + questions[i].choices[j]);
+      panel.append('<input type="radio" id="answers" name ="question' + '-' + i + '"value="'  + questions[i].choices[j] + '">' + questions[i].choices[j]);
+
       }
         }
-        panel.append("<button id='done' class='btn btn-outline-light btn-lg'>DONE</button>");
-      //id="start" class="btn btn-outline-light btn-lg"
+        panel.append("<br><button id='done' class='btn btn-outline-dark btn-lg'>DONE</button>");
+
     },
 
     done: function() {
 
         $.each($("input[name='question-0']:checked"), function() {
-            if ($(this).val() == questions[0].correctAnswer) {
+            if ($(this).val() == questions[0].right) {
                 console.log(this);
                   game.correct++;
             } else {
@@ -104,7 +106,7 @@ start: function() {
 
         });
         $.each($("input[name='question-1']:checked"), function() {
-            if ($(this).val() == questions[1].correctAnswer) {
+            if ($(this).val() == questions[1].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -113,7 +115,7 @@ start: function() {
 
         });
         $.each($("input[name='question-2']:checked"), function() {
-            if ($(this).val() == questions[2].correctAnswer) {
+            if ($(this).val() == questions[2].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -122,7 +124,7 @@ start: function() {
 
         });
         $.each($("input[name='question-3']:checked"), function() {
-            if ($(this).val() == questions[3].correctAnswer) {
+            if ($(this).val() == questions[3].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -131,7 +133,7 @@ start: function() {
 
         });
         $.each($("input[name='question-4']:checked"), function() {
-            if ($(this).val() == questions[4].correctAnswer) {
+            if ($(this).val() == questions[4].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -140,7 +142,7 @@ start: function() {
 
         });
         $.each($("input[name='question-5']:checked"), function() {
-            if ($(this).val() == questions[5].correctAnswer) {
+            if ($(this).val() == questions[5].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -149,7 +151,7 @@ start: function() {
 
         });
         $.each($("input[name='question-6']:checked"), function() {
-            if ($(this).val() == questions[6].correctAnswer) {
+            if ($(this).val() == questions[6].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -158,7 +160,7 @@ start: function() {
 
         });
         $.each($("input[name='question-7']:checked"), function() {
-            if ($(this).val() == questions[7].correctAnswer) {
+            if ($(this).val() == questions[7].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -167,7 +169,7 @@ start: function() {
 
         });
         $.each($("input[name='question-8']:checked"), function() {
-            if ($(this).val() == questions[8].correctAnswer) {
+            if ($(this).val() == questions[8].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -176,7 +178,7 @@ start: function() {
 
         });
         $.each($("input[name='question-9']:checked"), function() {
-            if ($(this).val() == questions[9].correctAnswer) {
+            if ($(this).val() == questions[9].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -203,11 +205,10 @@ start: function() {
           clearInterval(timer);
 
           $("#subcontainer h2").remove();
-       panel.html("<h2>You're Done!</h2>");
+       panel.html("<h2>Your Score:</h2>");
        panel.append("<h3>You got this many right: " + this.correct + "</h3>");
        panel.append("<h3>You got this many wrong: " + this.incorrect + "</h3>");
        panel.append("<h3>You didn't answer this many: " + (questions.length - (this.incorrect + this.correct)) + "</h3>");
-      
-      }
+      },
 
 };
