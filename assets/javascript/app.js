@@ -74,7 +74,7 @@ var questions = [
     var game = {
     correct: 0,
     incorrect: 0,
-    counter: 40,
+    counter: 60,
 //countdown funtion that reduces the counter value by 1
 countdown: function(){
     game.counter--;
@@ -87,7 +87,7 @@ countdown: function(){
 //the reduction speed will be 1 second
 start: function() {
     timer = setInterval(game.countdown, 1000);
-    $('#timeLeft').prepend('<h4>Timer: <span id="counter-number">40</span></h4>');
+    $('#timeLeft').prepend('<h4>Timer: <span id="counter-number">60</span></h4>');
     $("#start").remove();
 
     //loop for the questions to be added with the multiple choices
