@@ -106,7 +106,7 @@ start: function() {
     done: function() {
 
         $.each($("input[name='question-0']:checked"), function() {
-            if ($(this).val() == questions[0].right) {
+            if ($(this).val() === questions[0].right) {
                 console.log(this);
                   game.correct++;
             } else {
@@ -115,7 +115,7 @@ start: function() {
 
         });
         $.each($("input[name='question-1']:checked"), function() {
-            if ($(this).val() == questions[1].right) {
+            if ($(this).val() === questions[1].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -124,7 +124,7 @@ start: function() {
 
         });
         $.each($("input[name='question-2']:checked"), function() {
-            if ($(this).val() == questions[2].right) {
+            if ($(this).val() === questions[2].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -133,7 +133,7 @@ start: function() {
 
         });
         $.each($("input[name='question-3']:checked"), function() {
-            if ($(this).val() == questions[3].right) {
+            if ($(this).val() === questions[3].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -142,7 +142,7 @@ start: function() {
 
         });
         $.each($("input[name='question-4']:checked"), function() {
-            if ($(this).val() == questions[4].right) {
+            if ($(this).val() === questions[4].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -151,7 +151,7 @@ start: function() {
 
         });
         $.each($("input[name='question-5']:checked"), function() {
-            if ($(this).val() == questions[5].right) {
+            if ($(this).val() === questions[5].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -160,7 +160,7 @@ start: function() {
 
         });
         $.each($("input[name='question-6']:checked"), function() {
-            if ($(this).val() == questions[6].right) {
+            if ($(this).val() === questions[6].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -169,7 +169,7 @@ start: function() {
 
         });
         $.each($("input[name='question-7']:checked"), function() {
-            if ($(this).val() == questions[7].right) {
+            if ($(this).val() === questions[7].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -178,7 +178,7 @@ start: function() {
 
         });
         $.each($("input[name='question-8']:checked"), function() {
-            if ($(this).val() == questions[8].right) {
+            if ($(this).val() === questions[8].right) {
                 console.log(this);
                 game.correct++;
             } else {
@@ -187,7 +187,7 @@ start: function() {
 
         });
         $.each($("input[name='question-9']:checked"), function() {
-            if ($(this).val() == questions[9].right) {
+            if ($(this).val() === questions[9].right) {
                 console.log(this);
                 game.correct++;
             } else {
